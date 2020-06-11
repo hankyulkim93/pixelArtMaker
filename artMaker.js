@@ -1,7 +1,7 @@
 window.onload = function(){
 
-  let container = document.querySelector('#canvas')
-
+  //create span tag pixel boxes for the canvas
+  let container = document.querySelector('#canvas');
   for(let i = 0; i < 400; i++) {
     let box = document.createElement('span');
     box.setAttribute("class", "canvasPixel");
@@ -14,6 +14,7 @@ window.onload = function(){
 
   document.body.appendChild(container);
 
+  //creating the color palette
   let colorChoices = ['red', 'orange', 'yellow', 'green', 'blue', 'purple'];
   for(let color of colorChoices) {
     let palette = document.querySelector('#palette');
@@ -27,6 +28,7 @@ window.onload = function(){
     palette.appendChild(paletteColor);
   }
 
+  //connecting the palette and the canvas w/ event listeners (clicks to change color and add current color)
   let currColor = '';
 
   let palettePixel = document.querySelectorAll('.palettePixel');
